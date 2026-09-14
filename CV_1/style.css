@@ -1,0 +1,390 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Figtree", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.875rem;
+    background-image: url(images/background_wood.jpg);
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    box-shadow:
+        inset 0 15px 30px rgba(0,0,0,0.5),
+        inset 0 -15px 30px rgba(0,0,0,0.5),
+        0 20px 40px rgba(0,0,0,0.6);
+    border-radius: 8px;
+}
+
+main {
+    background-color: #f1eded;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    min-height: 100dvh;
+    width: 100%;
+}
+
+.display_page {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.display_info_perso {
+    text-align: center;
+    background: linear-gradient(155deg, #885729 0%,#885729 38%,#f0e9e0 35%, #f0e9e0 100%);
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+    
+}
+
+.space_between_nom_photo {
+    margin-bottom: 2rem;
+}
+
+.photo_prenom {
+    display: flex;
+    margin: auto;
+    width: clamp(10rem, 6.57rem + 17.14vw, 20rem);
+    height: clamp(10rem, 6.57rem + 17.14vw, 20rem);
+    overflow: hidden;
+    border-radius: 50%;
+    align-items: start;
+    justify-content: center;    
+}
+
+.nom_prenom {
+    display: flex;
+    flex-direction: column;
+}
+
+.nom_prenom h1 {
+    color: rgb(17, 17, 17);
+    font-size: 1.5rem;
+    width: fit-content;
+    margin: auto;
+    align-items: start;
+}
+
+.nom_prenom p {
+    width: fit-content;
+    margin: auto;
+    margin-top: 0;
+}
+
+.bouton_download {
+  display: block;          
+  width: fit-content;     
+  margin: 1.5rem auto;    
+  padding: 0.75rem 1.5rem; 
+  background-color: hsla(0, 0%, 50%, 0.851); 
+  color: hsl(0, 0%, 100%);               
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;                 
+  text-align: center;
+  border-radius: 0.5rem;                 
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.bouton_download:active {
+  transform: scale(0.98); 
+}
+
+.display_info_perso h3 {
+    background-color: hsla(0, 0%, 50%, 0.751);
+    color: hsl(0, 0%, 100%);
+    padding: 0.75rem; 
+    text-align: left;
+    font-size: clamp(0.8rem, 2vw, 1.5rem);   
+}
+
+.coordonnees p {
+    padding-left: 1.5rem;
+}
+
+.points_fort ul,
+.hobbies ul,
+.coordonnees p {
+     text-align: left; 
+}
+
+.coordonnees span {
+    text-decoration: underline ;
+}
+
+.display_info_generale {
+    text-align: center;
+    padding-bottom: 2rem;
+   
+}
+
+.introduction p,
+.formation p {
+    text-align: justify;
+    padding: 0 1.5rem;
+}
+
+.display_info_generale h1 {
+    font-size: clamp(1.6rem, 3vw, 1.8rem);
+}
+
+.display_info_generale h2 {
+    font-size: clamp(1.03rem, 2.5vw, 1.5rem);
+}
+
+.type_formation,
+.type_lieu_emplois {
+    font-weight: bold;
+}
+
+.lieu_formation,
+.duree_poste {
+    font-style: italic;
+    font-size: 0.800rem;
+}
+
+.emplois {
+    padding: 0 1.5rem;
+    text-align: left;
+}
+.emplois_entete {
+    display: flex;
+    flex-direction: column;   
+    align-items: flex-start;
+    gap: 0.2em;
+}
+
+.emplois_entete p{
+    margin: 1rem 0 0 ;
+}
+
+.poste {
+    margin: 0.3rem 1rem;
+}
+
+
+@media (min-width: 767px) and (max-width:1023px) {
+
+    body {
+        font-size: 1.1rem;
+    }
+
+    .space_between_nom_photo {
+    margin-bottom: 4rem;
+    }
+
+    .photo_prenom { 
+        width: 200px;
+        height: 200px;
+        border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ;
+    }
+
+    .nom_prenom h1 {
+        font-size: 1.7rem;
+        margin-top: 1rem;
+    }
+
+    .display_info_perso h3 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .space_between_points_fort_coordo {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .points_fort ul,
+    .hobbies ul, 
+    .coordonnees p {
+        font-size: 1rem;
+    }
+
+    .display_info_generale h1 {
+        font-size: 1.8rem;
+    }
+
+    .display_info_generale h2 {
+        font-size: 1.3rem;
+    }
+
+    .type_formation,
+    .type_lieu_emplois {
+        font-size: 1.2rem;
+    }
+
+    .lieu_formation,
+    .duree_poste {
+        font-size: 1rem;
+    }
+
+    .poste {
+        font-size: 1rem;
+    }
+}
+
+
+@media (min-width: 1024px) and (max-width: 1439px) {
+
+    body {
+        font-size: 1.1rem;
+    }
+
+    main {
+        width: 75%;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .display {
+        display: grid;
+        grid-template-columns: 15rem 1fr ;
+        min-height: 100dvh;
+        overflow-y: auto;
+    }
+
+    .display_info_perso {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .photo_prenom { 
+        margin: 2rem auto;       
+        width: 200px;
+        height: 200px;
+        border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ;
+    }
+
+    .nom_prenom h1 {
+        font-size: 1.7rem;
+    }
+
+    .space_between_points_fort_coordo {
+        margin-top: 1rem;
+    }
+
+    .points_fort {
+        height: 16rem;
+    }
+
+    .display_info_perso h3 {
+        font-size: 1.1rem;
+    }
+    .points_fort ul,
+    .hobbies ul, 
+    .coordonnees p {
+        font-size: 1rem;
+    }
+
+    .display_info_generale {
+        margin-top: 2rem;
+    }
+
+    .display_info_generale h1 {
+        margin-top: 0;
+        font-size: 1.8rem;
+    }
+
+    .display_info_generale h2 {
+        font-size: 1.3rem;
+    }
+
+    .type_formation,
+    .type_lieu_emplois {
+        font-size: 1rem;
+    }
+
+    .lieu_formation,
+    .duree_poste {
+        font-size: 0.875rem;
+    }
+
+    .poste {
+    font-size: 1rem;
+    }
+}
+
+@media (min-width: 1440px) {
+
+    body {
+        font-size: 1.3rem;
+    }
+
+    main {
+        width: 75%;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .display {
+        display: grid;
+        grid-template-columns: 22rem 1fr;
+        max-height: 100dvh;
+        overflow-y: auto;
+    }
+
+    .display_info_perso {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .photo_prenom { 
+        margin: 2rem auto;       
+        width: 200px;
+        height: 200px;
+        border-radius: 50% 50% 50% 50% / 50% 50% 50% 50% ;
+    }
+
+    .nom_prenom h1 {
+        font-size: 2rem;
+    }
+
+    .bouton_download {                  
+        font-size: 1.2rem;
+    }
+
+    .display_info_perso h3 {
+        font-size: 1.3rem;
+    }
+    .points_fort ul,
+    .hobbies ul, 
+    .coordonnees p {
+        font-size: 1.3rem;
+    }
+
+    .display_info_generale {
+        padding: 1.5rem;
+        margin-top: 2rem;
+    }
+
+    .display_info_generale h1 {
+        margin-top: 0;
+        font-size: 2.2rem;
+    }
+
+    .display_info_generale h2 {
+        font-size: 1.7rem;
+    }
+
+    .type_formation,
+    .type_lieu_emplois {
+        font-size: 1.5rem;
+    }
+
+    .lieu_formation,
+    .duree_poste {
+        font-size: 1.3rem;
+    }
+
+    .poste {
+    font-size: 1.3rem;
+    }
+}

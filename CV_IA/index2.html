@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="CV de Jarod Billy, employé polyvalent.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style2.css">
+	<title>CV de Jarod Billy</title>
+</head>
+<body>
+	<main class="page-shell">
+		<section class="display" aria-label="Curriculum vitae">
+			<aside class="profile-panel">
+				<div class="profile-header">
+					<a class="profile-photo" href="images/img_profil_cv.jpeg">
+						<img src="images/img_profil_cv_mini.png" alt="Portrait de Jarod Billy">
+					</a>
+					<h1>Jarod Billy</h1>
+					<p class="job-title">Employé polyvalent</p>
+				</div>
+
+				<div class="profile-actions" aria-label="Actions">
+					<button class="button button-primary" id="downloadCv" type="button">
+						Télécharger le CV
+					</button>
+					<button class="button button-secondary" id="portfolioButton" type="button">
+						Portfolio
+					</button>
+				</div>
+
+				<div class="profile-columns">
+					<section class="profile-section">
+						<h2>Points forts</h2>
+						<ul>
+							<li>Bonne humeur</li>
+							<li>Organisé</li>
+							<li>Motivé</li>
+							<li>Sens du service</li>
+							<li>Relation client</li>
+							<li>Communication</li>
+							<li>Travail en équipe</li>
+							<li>Curieux</li>
+						</ul>
+					</section>
+
+					<section class="profile-section">
+						<h2>Mes hobbies</h2>
+						<ul>
+							<li>Randonnées et trekking</li>
+							<li>Pêche</li>
+							<li>Nage en mer</li>
+							<li>Photographie</li>
+							<li>Culture tech et web</li>
+							<li>Jeux vidéo</li>
+						</ul>
+					</section>
+
+					<section class="profile-section contact-section">
+						<h2>Coordonnées</h2>
+						<p><strong>Localisation</strong><br>Nice (06000)</p>
+						<p><strong>Contact</strong><br><a href="mailto:jarod.billy@hotmail.com">jarod.billy@hotmail.com</a></p>
+					</section>
+				</div>
+			</aside>
+
+			<article class="content-panel">
+				<section class="content-section">
+					<h2>À propos de moi</h2>
+					<p>Proactif et adaptable, je cherche à mettre à profit mes compétences. J'ai l'habitude de travailler en équipe, je suis respectueux, doté d'un esprit d'initiative et capable de trouver des solutions fiables aux problèmes. Autonome et travailleur, je sais gérer le stress et m'appuyer sur mon expérience professionnelle pour répondre efficacement aux demandes.</p>
+				</section>
+
+				<section class="content-section">
+					<h2>Formation professionnelle</h2>
+					<article class="timeline-item">
+						<h3>Services informatiques aux organisations (SIO) - 1 an</h3>
+						<p class="muted">CFAI, Baillargues | Septembre 2017 - Avril 2018</p>
+						<p>Installation et gestion de serveurs informatiques, algorithmique et bases du HTML et du CSS.</p>
+					</article>
+					<article class="timeline-item">
+						<h3>Bac Pro Systèmes électroniques et numériques (SEN)</h3>
+						<p class="muted">Lycée professionnel Jules Raimu | 2015 - 2017</p>
+						<p>Compétences en bureautique et utilisation de Windows : console CMD, pare-feu, création et gestion des utilisateurs et des droits.</p>
+					</article>
+				</section>
+
+				<section class="content-section">
+					<h2>Expérience professionnelle</h2>
+					<div class="experience-list">
+						<article class="experience-item"><h3>Restaurant LéoLéa, Saint-Jean-Cap-Ferrat</h3><p class="muted">Avril - Août 2018</p><p>Serveur, barman</p></article>
+						<article class="experience-item"><h3>Restaurant BayStarCafé, Saint-Laurent-du-Var</h3><p class="muted">Septembre - Décembre 2018</p><p>Chef de rang, serveur</p></article>
+						<article class="experience-item"><h3>Restaurant La Civette, Avignon</h3><p class="muted">Février - Avril 2019</p><p>Chef de rang</p></article>
+						<article class="experience-item"><h3>Le Muchacha, Montpellier</h3><p class="muted">Juin - Septembre 2019</p><p>Runner</p></article>
+						<article class="experience-item"><h3>Vendeur Sandro, Saint-Laurent-du-Var</h3><p class="muted">Mars 2022 - Septembre 2023</p><p>Responsable de vente, vendeur</p></article>
+						<article class="experience-item"><h3>Auto-entrepreneur jardinier</h3><p class="muted">Avril 2023 à aujourd'hui</p></article>
+					</div>
+				</section>
+			</article>
+		</section>
+	</main>
+
+	<script>
+		const pdfPath = "PDF/cv_lettre_mr_billy_jarod.pdf";
+
+		document.querySelector("#downloadCv").addEventListener("click", async () => {
+			const button = document.querySelector("#downloadCv");
+			const originalText = button.textContent;
+			button.disabled = true;
+			button.textContent = "Préparation...";
+
+			try {
+				const response = await fetch(pdfPath);
+				if (!response.ok) {
+					throw new Error("PDF introuvable");
+				}
+				const pdfBlob = await response.blob();
+				const downloadUrl = URL.createObjectURL(pdfBlob);
+				const link = document.createElement("a");
+				link.href = downloadUrl;
+				link.download = "cv_lettre_mr_billy_jarod.pdf";
+				link.click();
+				URL.revokeObjectURL(downloadUrl);
+			} catch (error) {
+				window.open(pdfPath, "_blank", "noopener,noreferrer");
+			} finally {
+				button.disabled = false;
+				button.textContent = originalText;
+			}
+		});
+
+		document.querySelector("#portfolioButton").addEventListener("click", () => {
+			window.alert("La rubrique Portfolio sera bientôt disponible.");
+		});
+	</script>
+</body>
+</html>
