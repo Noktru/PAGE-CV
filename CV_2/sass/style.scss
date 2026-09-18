@@ -1,0 +1,23 @@
+.display__persoinfo {
+    text-align: center;
+    background: linear-gradient(155deg, #885729 0%,#885729 38%,#f0e9e0 35%, #f0e9e0 100%);
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+    
+    
+}
+
+.display__persoinfo--spacebtw {
+        margin-bottom: 2rem;
+        
+            .picture {
+                display: flex;
+                margin: auto;
+                width: clamp(10rem, 6.57rem + 17.14vw, 20rem);
+                height: clamp(10rem, 6.57rem + 17.14vw, 20rem);
+                overflow: hidden;
+                border-radius: 50%;
+                align-items: start;
+                justify-content: center;    
+            }
+    }
